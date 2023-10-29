@@ -144,7 +144,7 @@ describe('CommentRepositoryPostgres', () => {
   describe('verifyCommentInThread function', () => {
     it('should return NotFoundError when no comment in thread', async () => {
       // Arrange
-      await ThreadsTableTestHelper.addNewThread({ id: 'thread-123' });
+      // await ThreadsTableTestHelper.addNewThread({ id: 'thread-123' });
       await CommentsTableTestHelper.addComment({ id: 'comment-321 ' });
 
       const commentRepositoryPostgres = new CommentRepositoryPostgres(pool, {});

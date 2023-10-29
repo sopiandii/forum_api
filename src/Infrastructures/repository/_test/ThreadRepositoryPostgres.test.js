@@ -114,8 +114,8 @@ describe('ThreadRepositoryPostgres', () => {
 
     it('should not throw NotFoundError when thread available', async () => {
       // Arrange
-      await ThreadsTableTestHelper.addNewThread({ id: 'thread-321' });
       const threadRepositoryPostgres = new ThreadRepositoryPostgres(pool, {});
+      await ThreadsTableTestHelper.addNewThread({ id: 'thread-321' });
 
       // Action and Assert
       await expect(threadRepositoryPostgres.checkThreadAvailability('thread-321'))

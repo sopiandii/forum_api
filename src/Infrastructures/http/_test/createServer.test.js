@@ -37,4 +37,21 @@ describe('HTTP server', () => {
     expect(responseJson.status).toEqual('error');
     expect(responseJson.message).toEqual('terjadi kegagalan pada server kami');
   });
+
+  it('should handle registered routes correctly', async () => {
+    // Arrange
+    const request = {
+      method: 'GET',
+      url: '/about',
+    };
+    const server = await createServer({}); // fake injection
+
+    // Action
+    const response = await server.inject(request);
+
+    // Assert
+    const responseJson = JSON.parse(response.payload);
+    expect(response.statusCode).toEqual(200);
+    expect(responseJson.value).toEqual('forum-api-v1.0.0');
+  });
 });
