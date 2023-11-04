@@ -5,3 +5,4 @@ config/database/test.json
 coverage
 .env
 .vscode
+forum-api-app-server.pem
