@@ -61,13 +61,22 @@ const createServer = async (container) => {
     },
   ]);
 
-  server.route({
-    method: 'GET',
-    path: '/about',
-    handler: () => ({
-      value: 'forum-api-v1.0.0',
-    }),
-  });
+  server.route([
+    {
+      method: 'GET',
+      path: '/about',
+      handler: () => ({
+        value: 'forum-api-v1.0.0',
+      }),
+    },
+    {
+      method: 'GET',
+      path: '/',
+      handler: () => ({
+        value: 'Hello World!',
+      }),
+    },
+  ]);
 
   server.ext('onPreResponse', (request, h) => {
     // mendapatkan konteks response dari request

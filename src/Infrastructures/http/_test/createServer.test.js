@@ -63,7 +63,7 @@ describe('HTTP server', () => {
       // Action
       const response = await server.inject({
         method: 'GET',
-        path: '/',
+        url: '/',
       });
 
       // Assert
