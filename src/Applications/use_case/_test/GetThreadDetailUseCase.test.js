@@ -99,7 +99,7 @@ describe('GetThreadDetailUseCase', () => {
         {
           id: 'comment-321',
           username: 'user-321',
-          content: '**komentar telah dihapus**',
+          content: 'some thread comment',
           date: '24-09-2023',
           thread_id: 'thread-321',
           is_delete: true,
